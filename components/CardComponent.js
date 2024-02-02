@@ -27,6 +27,13 @@ export default function CardComponent({ product }) {
                 <p className="mx-2 text-sm font-semibold text-black">
                   In Stock
                 </p>
+                <Link
+                  href="https://wa.me/919547071934/"
+                  className="px-4 py-2 bg-green-500 flex flex-row items-center space-x-2"
+                >
+                  <FaWhatsapp className="text-white" />
+                  <span className="text-white font-semibold">Buy Now</span>
+                </Link>
               </div>
             ) : (
               <div className=" flex flex-row items-center">
@@ -34,15 +41,15 @@ export default function CardComponent({ product }) {
                 <p className="mx-2 text-sm font-semibold text-black">
                   Out of Stock
                 </p>
+                <Link
+                  href="https://wa.me/919547071934/"
+                  className="px-4 py-2 bg-green-500 flex flex-row items-center space-x-2"
+                >
+                  <FaWhatsapp className="text-white" />
+                  <span className="text-white font-semibold">Preorder Now</span>
+                </Link>
               </div>
             )}
-            <Link
-              href="https://wa.me/919547071934"
-              className="px-4 py-2 bg-green-500 flex flex-row items-center space-x-2"
-            >
-              <FaWhatsapp className="text-white" />
-              <span className="text-white font-semibold">Buy Now</span>
-            </Link>
           </div>
         </div>
       </div>
