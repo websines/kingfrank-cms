@@ -37,8 +37,8 @@ const CustomerReviews = ({ reviews }) => {
       </div>
       <Slider {...settings} ref={sliderRef} className="w-[80%] mx-auto">
         {reviews.map((review, index) => (
-          <div key={index} className="p-4 rounded my-2 text-center">
-            <p className="text-3xl md:text-6xl">{review.review}</p>
+          <div key={index} className="p-4 rounded my-4 text-center text-black">
+            <p className="text-2xl md:text-4xl italic">"{review.review}"</p>
             <p className="mt-2 italic">{review.author}</p>
           </div>
         ))}

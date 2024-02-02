@@ -13,7 +13,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="w-full p-4">
+    <header className="w-full p-4 bg-white">
       <nav className="flex flex-grow flex-row justify-between items-center">
         <div className="p-2">
           <Link href="/">
