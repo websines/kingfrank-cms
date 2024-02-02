@@ -29,7 +29,7 @@ function Product({ data, faqs }) {
     urlFor(imageObject.asset._ref).url()
   );
   return (
-    <>
+    <div className="bg-white">
       <SaleDropdown />
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-16 gap-8">
         <ImageGallery images={images} />
@@ -155,7 +155,7 @@ function Product({ data, faqs }) {
       </div>
       <ReviewSlider />
       <Footer />
-    </>
+    </div>
   );
 }
 

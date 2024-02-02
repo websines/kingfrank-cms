@@ -26,11 +26,11 @@ function SaleDropdown({ data }) {
           data.map((list, index) => (
             <div
               key={index}
-              className="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-[15rem] bg-white shadow-md  p-2 mt-2 dark:bg-gray-800 dark:border dark:border-gray-700"
+              className="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-[15rem] bg-white shadow-md  p-2 mt-2 "
               aria-labelledby="hs-dropdown-custom-icon-trigger"
             >
               <Link
-                className="flex items-center gap-x-3.5 py-2 px-3 text-md font-medium text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:bg-gray-700"
+                className="flex items-center gap-x-3.5 py-2 px-3 text-md font-medium text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 "
                 href={`/product/${list.slug.current}`}
               >
                 {list.name}
