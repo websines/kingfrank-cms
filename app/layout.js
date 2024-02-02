@@ -1,7 +1,9 @@
-import { Inter } from "next/font/google";
+import { Jost } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import PrelineScript from "@/components/PrelineComponent";
 
-const inter = Inter({ subsets: ["latin"] });
+const jost = Jost({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -10,8 +12,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="bg-white">
+      <body
+        className={`${jost.className} md:mx-auto mx-4 md:px-16 md:max-w-[80%] bg-white`}
+      >
+        <Navbar />
+        {children}
+      </body>
+      <PrelineScript />
     </html>
   );
 }
