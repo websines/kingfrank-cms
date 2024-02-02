@@ -15,8 +15,8 @@ const ListSection = async () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center">
-        <span className="text-2xl md:text-4xl font-semibold tracking-wide my-4">
-          Brand New Bromptons for Sale in Singapore
+        <span className="text-2xl md:text-4xl font-medium tracking-wide my-8">
+          King Frank - established in 2020
         </span>
         <div className="grid grid-cols-1 md:grid-cols-3 my-4 gap-16">
           {products.map((product, index) => (

@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
+import { IoMenuOutline, IoClose } from "react-icons/io5";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,7 +22,7 @@ export default function Navbar() {
             />
           </Link>
         </div>
-        <div className="md:flex hidden space-x-4 font-semibold">
+        <div className="md:flex hidden space-x-12 font-medium flex-row justify-start items-start">
           <Link href="/">
             <p className="cursor-pointer">Home</p>
           </Link>
@@ -44,12 +45,16 @@ export default function Navbar() {
             className="text-black cursor-pointer focus:outline-none"
             onClick={toggleMobileMenu}
           >
-            {mobileMenuOpen ? "Close" : "Menu"}
+            {mobileMenuOpen ? (
+              <IoClose className="w-6 h-6" />
+            ) : (
+              <IoMenuOutline className="w-6 h-6" />
+            )}
           </button>
         </div>
         {mobileMenuOpen && (
           <div className="md:hidden absolute top-24 right-0 left-0 bg-white z-10">
-            <div className="flex flex-col space-y-4 p-4 font-semibold text-black">
+            <div className="flex flex-col space-y-4 p-4 font-medium text-black">
               <Link href="/">
                 <p className="cursor-pointer">Home</p>
               </Link>

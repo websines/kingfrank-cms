@@ -15,11 +15,11 @@ export default function CTASection() {
           alt="image2"
           className="h-[570px] w-[550px] object-fill hidden md:block"
         ></img>
-        <div className="absolute top-40 bg-white h-[220px] w-[280px] md:w-[440px] flex flex-col items-center justify-center px-12 text-black">
-          <span className="font-semibold text-xl sm:text-2xl text-center">
-            New to KingFrankCo?
+        <div className="absolute top-40 bg-white h-[220px] w-[280px] md:w-[440px] flex flex-col items-center justify-center px-6 text-black">
+          <span className="font-medium text-xl sm:text-2xl text-center">
+            New to Brompton?
           </span>
-          <div className="mt-4 mx-auto text-xs font-medium text-center">
+          <div className="mt-4 mx-auto text-sm font-medium text-center">
             <span>
               Don’t worry, everyone starts somewhere. We’ve put together a
               Brompton FAQ to help you get started.

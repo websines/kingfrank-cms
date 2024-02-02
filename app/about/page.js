@@ -2,12 +2,23 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import ReviewSlider from "@/components/ReviewSlider";
 import SaleDropdown from "@/components/SaleDropdown";
+import { sanity_client, urlFor } from "@/lib/sanity-client";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
-export default function About() {
+const getData = async () => {
+  const query = `*[_type == 'about']`;
+
+  const data = await sanity_client.fetch(query);
+
+  return data;
+};
+
+export const revalidate = 30;
+function About({ data }) {
   const sectionStyle = {
-    backgroundImage: 'url("/img5.jpg")',
+    backgroundImage: `url(${urlFor(data.main_image.asset._ref).url()})`,
+    backgroundSize: "cover",
     backgroundSize: "cover",
     backgroundPosition: "center",
     height: "440px",
@@ -16,11 +27,11 @@ export default function About() {
     <div className="bg-white">
       <SaleDropdown />
       <section
-        class="flex flex-row items-center justify-center bg-cover bg-center my-5"
+        className="flex flex-row items-center justify-center bg-cover bg-center my-5"
         style={sectionStyle}
       >
         <h1 class="text-white text-3xl md:text-4xl font-bold text-center md:w-[60%] w-[80%]">
-          We believe that bicycling makes people happier
+          {data.main_image_text}
         </h1>
       </section>
       <section className="grid grid-cols-1 md:grid-cols-2 gap-16 my-8 py-8">
@@ -32,16 +43,10 @@ export default function About() {
             Our story
           </p>
           <h2 className="text-left text-black md:text-3xl text-xl font-semibold">
-            About our Store
+            {data.our_story_heading}
           </h2>
           <p className="mt-4 text-black text-md opacity-85">
-            Life is better with a Brompton and we hope to help more people get
-            more joy from riding. Sometimes the things we feel on a bike can be
-            sublime. Those precious quiet moments that fill us with gratitude.
-            Allowing ourselves to feel free, seeing things never noticed from a
-            car, and the freedom to take whatever road or trail that comes
-            along. And for that moment while we are on two wheels, we feel
-            happy.
+            {data.our_story_text}
           </p>
         </div>
       </section>
@@ -79,13 +84,28 @@ export default function About() {
       <section className="my-8 p-8 md:p-16">
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-16 gap-8">
           <div className="flex flex-col items-center justify-center space-y-2">
-            <img src="/img1.jpg" className="h-[500px] w-[440px] object-cover" />
-            <img src="/img1.jpg" className="h-[500px] w-[440px] object-cover" />
-            <img src="/img1.jpg" className="h-[500px] w-[440px] object-cover" />
+            <img
+              src={`${urlFor(data.images[0].asset._ref).url()}`}
+              className="h-[500px] w-[440px] object-cover"
+            />
+            <img
+              src={`${urlFor(data.images[1].asset._ref).url()}`}
+              className="h-[500px] w-[440px] object-cover"
+            />
+            <img
+              src={`${urlFor(data.images[2].asset._ref).url()}`}
+              className="h-[500px] w-[440px] object-cover"
+            />
           </div>
           <div className="flex flex-col md:py-6 mt-2 items-center justify-center space-y-2">
-            <img src="/img3.jpg" className="h-[500px] w-[440px] object-cover" />
-            <img src="/img3.jpg" className="h-[500px] w-[440px] object-cover" />
+            <img
+              src={`${urlFor(data.images[3].asset._ref).url()}`}
+              className="h-[500px] w-[440px] object-cover"
+            />
+            <img
+              src={`${urlFor(data.images[4].asset._ref).url()}`}
+              className="h-[500px] w-[440px] object-cover"
+            />
           </div>
         </div>
       </section>
@@ -95,3 +115,11 @@ export default function About() {
     </div>
   );
 }
+
+const page = async () => {
+  const data = await getData();
+
+  return <About data={data[0]} />;
+};
+
+export default page;

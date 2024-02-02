@@ -1,4 +1,5 @@
 import { urlFor } from "@/lib/sanity-client";
+
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -6,7 +7,11 @@ export default function CardComponent({ product }) {
   return (
     <Link href={`/product/${product.slug.current}`}>
       <div className="flex flex-col justify-center items-start">
-        <img src={urlFor(product.images[0].asset._ref).url()} alt="bike" />
+        <img
+          src={urlFor(product.images[0].asset._ref).url()}
+          alt="bike"
+          className="w-[347px] h-[347px]"
+        />
         <div className="mt-4 text-left">
           <span className="text-xs font-light text-gray-500">Brompton</span>
           <p className="font-semibold text-lg text-black">

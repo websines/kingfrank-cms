@@ -72,7 +72,7 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <div className="my-2 flex flex-row items-center justify-between p-2 w-full flex-wrap">
+      {/* <div className="my-2 flex flex-row items-center justify-between p-2 w-full flex-wrap">
         <div className="text-gray-500 text-xs uppercase tracking-wide">
           © 2024 KingFrankCo Pte. Ltd. (Singapore). All rights reserved.
         </div>
@@ -90,7 +90,7 @@ export default function Footer() {
           ></img>
           <img src={"/amex.svg"} alt="amex" className="h-6 w-12"></img>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
