@@ -29,7 +29,7 @@ function Product({ data, faqs }) {
     urlFor(imageObject.asset._ref).url()
   );
   return (
-    <div className="bg-white">
+    <div className="bg-white text-black">
       <SaleDropdown />
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-16 gap-8">
         <ImageGallery images={images} />
@@ -41,7 +41,9 @@ function Product({ data, faqs }) {
             <p className="font-semibold text-3xl text-black my-4">
               {data && data.name}
             </p>
-            <p className="font-semibold text-gray-500 text-lg">$1850</p>
+            <p className="font-semibold text-gray-500 text-lg">
+              {data && data.price}
+            </p>
             <div className="flex flex-row items-center justify-start mt-2">
               {data && data.in_stock ? (
                 <div className=" flex flex-row items-center">

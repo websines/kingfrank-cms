@@ -10,6 +10,8 @@ const getData = async () => {
   return data;
 };
 
+export const revalidate = 30;
+
 function SaleDropdown({ data }) {
   return (
     <>

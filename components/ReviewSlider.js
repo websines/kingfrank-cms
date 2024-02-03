@@ -9,6 +9,8 @@ const getReviewData = async () => {
   return data;
 };
 
+export const revalidate = 30;
+
 export default async function ReviewSlider() {
   const reviews = await getReviewData();
   return (
