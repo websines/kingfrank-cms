@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+import Link from "next/link";
 
 const CustomerReviews = ({ reviews }) => {
   const sliderRef = useRef(null);
@@ -37,9 +38,17 @@ const CustomerReviews = ({ reviews }) => {
       </div>
       <Slider {...settings} ref={sliderRef} className="w-[80%] mx-auto">
         {reviews.map((review, index) => (
-          <div key={index} className="p-4 rounded my-4 text-center text-black">
+          <div
+            key={index}
+            className="p-4 rounded my-4 text-center text-black space-y-4"
+          >
             <p className="text-2xl md:text-4xl italic">"{review.review}"</p>
-            <p className="mt-2 italic">{review.author}</p>
+            <Link
+              href={`${review.link}`}
+              className="mt-2 italic text-red-400 py-2"
+            >
+              {review.author}
+            </Link>
           </div>
         ))}
       </Slider>

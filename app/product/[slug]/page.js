@@ -24,6 +24,7 @@ const getFaqData = async () => {
   return data;
 };
 export const revalidate = 30;
+
 function Product({ data, faqs }) {
   const images = data.images.map((imageObject) =>
     urlFor(imageObject.asset._ref).url()

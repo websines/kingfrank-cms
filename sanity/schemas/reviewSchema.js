@@ -13,5 +13,10 @@ export default {
       title: 'Author',
       type: 'string',
     },
+    {
+      name: 'link',
+      title: 'Link',
+      type: 'string',
+    },
   ],
 }
