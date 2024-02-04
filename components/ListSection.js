@@ -16,11 +16,11 @@ const ListSection = async () => {
   const products = await getData();
   return (
     <>
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center my-4">
         <span className="text-2xl md:text-4xl font-medium tracking-wide my-8 text-black text-center">
           King Frank - established in 2020
         </span>
-        <div className="grid grid-cols-1 md:grid-cols-3 my-4 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 my-4 gap-8">
           {products.map((product, index) => (
             <CardComponent key={index} product={product} />
           ))}

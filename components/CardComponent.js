@@ -10,7 +10,7 @@ export default function CardComponent({ product }) {
         <img
           src={urlFor(product.images[0].asset._ref).url()}
           alt="bike"
-          className="w-[347px] h-[347px]"
+          className="w-[347px] h-[347px] object-cover"
         />
         <div className="mt-4 text-left">
           <span className="text-xs font-light text-gray-500">Brompton</span>
